@@ -1,0 +1,24 @@
+# Shows available recipies
+help:
+    just --list
+
+# Run main function
+run:
+    clojure -M -m devos.main
+
+# Run clojure tests
+test:
+    clojure -M:test -m kaocha.runner
+
+# Watch tests
+watch:
+    clojure -M:test --watch
+
+format_check:
+    clojure -M:format -m cljfmt.main check src dev test
+# Format clojure code
+format:
+    clojure -M:format -m cljfmt.main fix src dev test
+# Link clojure code
+lint:
+    clojure -M:lint -m clj-kondo.main --lint .

@@ -1,0 +1,38 @@
+{:paths ["src" "resources"]
+ :deps  {org.clojure/clojure {:mvn/version "1.12.4"}}
+ :aliases
+ {
+  :dev
+  {:extra-paths ["dev" "test"]
+   :extra-deps  {}}
+  
+  :neil {:project {:name {{name}}}}
+
+  :nREPL
+  {:extra-paths ["dev"]}
+
+
+  :test
+  {:extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}}
+   :main-opts  ["-m" "kaocha.runner"]}
+
+  :lint
+  {:deps {clj-kondo/clj-kondo {:mvn/version "2026.05.25"}}}
+  
+  :format
+  {:deps {dev.weavejester/cljfmt {:mvn/version "0.16.4"}}}
+
+  :migrate
+  {:extra-deps  {;; SQL Migrations
+                 com.github.paulbutcher/clj-migratus {:git/tag "v1.0.3"
+                                                      :git/sha "46a3ac1"}
+                 migratus/migratus                   {:mvn/version "1.6.7"}}
+   :extra-paths ["migrations_clj"]
+   :jvm-opts    ["-Dmigratus.config.path=migratus.clj"]
+   :main-opts   ["-m" "clj-migratus"]}
+
+  :dev
+  {:extra-paths ["dev" "test"]
+   :extra-deps  {lambdaisland/kaocha {:mvn/version "1.91.1392"}}}
+
+  }}
