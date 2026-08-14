@@ -1,5 +1,5 @@
 (ns {{top/ns}}.{{main/ns}}-test
-  (:require [{{test-runner/namespace}} :refer [{{test-runner/deftest}} {{test-runner/is}} {{test-runner/testing}}]]
+  (:require [clojure.test :refer [deftest is testing]]
             [{{top/ns}}.{{main/ns}} :as sut])) ; system under test
 
 ({{test-runner/deftest}} a-test

@@ -8,7 +8,7 @@ run:
 
 # Run clojure tests
 test:
-    clojure -M:test -m kaocha.runner
+    clojure -M:test
 
 # Watch tests
 watch:
